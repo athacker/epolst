@@ -1,0 +1,30 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="/polst/src/main/resources/META-INF/persistence.xsd"
+	version="2.0">
+	
+	<persistence-unit name="punit" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>	
+		 <class>gov.utah.polst.model.Audit</class>
+		 <class>gov.utah.polst.model.Patient</class>
+		 <class>gov.utah.polst.model.Polst</class>
+		 <class>gov.utah.polst.model.PolstUser</class>
+	</persistence-unit>
+	
+	<persistence-unit name="punitEden" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<non-jta-data-source>dataSourceEden</non-jta-data-source>
+	 
+		<class>gov.utah.polst.model.EdenUser</class>
+	</persistence-unit>
+	
+	
+	<persistence-unit name="punitPolaris" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<non-jta-data-source>dataSourcePolaris</non-jta-data-source>
+		
+		<class>gov.utah.polst.model.PolarisUser</class>
+	</persistence-unit>
+	
+</persistence>
+	

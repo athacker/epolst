@@ -1,5 +1,0 @@
-amcelwee: aaron/boilerplate/style.css has been updated to reflect the color 
-change to the screen. using jquery or something else, when a cursor is placed in 
-any of the fields, the class edit needs to be added to the form.
-also, the class of the save button should be btn-success (green).
-

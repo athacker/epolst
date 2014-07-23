@@ -1,0 +1,37 @@
+ 
+<row> <!--  main container row -->
+<div  class="col-md-12">
+<form class="modalForm">
+ <h4 class="modalHeader">In-Activate ePolst for {{ patient.fullName}}</h4>
+ 
+ 
+ 	<div>
+	<label>Status:</label>   {{ patient.currentPolstStatus}}
+ </div>
+ <div>
+	<label>Certified Physician:</label>  {{ patient.physicianFullName}} 
+ </div>
+  <div>
+	<label>Primary Care Provider:</label>  {{ patient.primaryCareProvider}} 
+ </div>
+ 
+ <div>
+	<label>Please State Reason:</label>  
+ 	<textarea cols="80" rows="10" data-ng-model="polst.statusChangeReason"/>
+ </div>
+ <p/>
+ 
+<div class="modal-footer">  
+<div>
+	<button class="btn btn-primary" data-ng-click="cancelPolst()">Save</button>
+	<button class="btn btn-warning" data-ng-click="closeModal()">Cancel</button>
+</div>
+</div> 
+ 
+ </form>
+</div>
+</row>
+
+
+ 
+ 

@@ -1,0 +1,58 @@
+ <row> <!--  main container row -->
+	 
+	 
+	 <div class="modalHeader" >  {{(items|filter:query).length}} Patient(s) were found having similar names.    </h4>
+	 
+	 <div class="modalSubHeader">To avoid duplicate entry, please review this list.  
+	 <b>Click</b> on the row you wish to modify OR select <b>Cancel</b> button below to start a new patient record.
+	 </div>
+ 
+	 </div> 
+	 
+	 
+ 	 <div>
+ 	 <br/> 
+ 	 	<div style="overflow:scroll; height:200px; overflow-x:hidden;"> 
+            <table class="table table-striped table-hover">
+            	<thead>
+            	<tr>
+	            	<th>
+	            		<div data-ng-click="predicate = 'fullName'; sortName=true" >Name  </div>
+             		 
+    				</th>
+	                <th><div data-ng-click="predicate = 'dob'; sortDob=true" >Dob</div>
+    	    		 
+    				</th>
+					<th><div data-ng-click="predicate = 'cityCurrent'; sortCity=true"  >City </div>
+             			 
+    				</th>
+	            	<th><div data-ng-click="predicate = 'stateCurrent'; sortState=true" >State </div>
+             		 
+    				</th>
+            	</tr>
+            	</thead>
+            	<tbody>
+                <tr ng-repeat="item in items | orderBy:predicate:reverse" ng-click="ok(item)">
+                    <td>{{ item.fullName }} </td>
+			 		<td>{{ item.dob| date}}   </td> 
+               		<td>{{ item.cityCurrent}} </td>
+               		<td>{{ item.stateCurrent}}</td>
+                </tr>
+                </tbody>
+           </table>
+  		</div>
+  			
+    </div>			
+  	
+ 
+
+ 
+
+
+   
+<div class="modal-footer">        
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+ </div>
+ 
+  
+</row> 
